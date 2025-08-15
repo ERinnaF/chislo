@@ -1,0 +1,24 @@
+import math
+
+def get_positive_integer():
+    while True:
+        user_input = input("Введите положительное целое число: ")
+        try:
+            number = int(user_input)
+            if number < 0:
+                print("Ошибка: введите неотрицательное число.")
+            else:
+                return number
+        except ValueError:
+            print("Ошибка: введите целое число.")
+
+def main():
+    n = get_positive_integer()
+    try:
+        result = math.factorial(n)
+print(f"Факториал числа равен {result}")
+    except OverflowError:
+        print("Ошибка: слишком большое число для вычисления факториала.")
+
+if __name__ == "__main__":
+    main()
